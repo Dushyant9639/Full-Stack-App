@@ -12,22 +12,35 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        {/* Make Register page default */}
+        <Route path="/" element={<Register />} />
+        <Route path="/login" element={<Login />} />
 
         <Route
           path="/dashboard"
-          element={<ProtectedRoute element={<Dashboard />} />}
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
         />
 
         <Route
           path="/profile"
-          element={<ProtectedRoute element={<Profile />} />}
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
         />
 
         <Route
           path="/resources"
-          element={<ProtectedRoute element={<Resources />} />}
+          element={
+            <ProtectedRoute>
+              <Resources />
+            </ProtectedRoute>
+          }
         />
       </Routes>
     </>
